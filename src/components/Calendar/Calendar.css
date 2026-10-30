@@ -4,8 +4,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* Убираем space-between, теперь контролируем отступы вручную */
   justify-content: flex-start;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .time {
@@ -53,7 +55,12 @@
 }
 
 .holidays {
-  width: 100%;
-  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 50%;
   background: rgba(0, 0, 0, 0.4);
+  text-align: center;
+  font-size: 3vh;
+  margin-top: auto;
+  padding: 0 0 5px 5px;
 }

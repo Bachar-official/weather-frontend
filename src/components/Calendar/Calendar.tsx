@@ -2,11 +2,13 @@ import './Calendar.css';
 import { useDayContext } from "../../context/DayContext";
 import { dateToTime } from '../../utils';
 import SunBlock from './components/SunBlock/SunBlock';
+import { useActiveHoliday } from './hooks/useActiveHoliday';
 
 function Calendar() {
   const { backgroundSrc, weather, time, today, holidays } = useDayContext();
+  const activeIndex = useActiveHoliday(holidays);
 
-  return <div className='calendar' style={{ backgroundImage: backgroundSrc ?? undefined }}>
+  return <div className='calendar' style={{ backgroundImage: backgroundSrc ? `url(${backgroundSrc})` : undefined }}>
 
     <div className='time'>
       <SunBlock time={dateToTime(weather?.sunrise)} icon="sunrise" />
@@ -21,7 +23,7 @@ function Calendar() {
     </div>
 
 
-    <div className='holidays'>{holidays.length}</div>
+    <div className='holidays'><p>{holidays.length > 0 ? holidays[activeIndex].text ?? '' : ''}</p></div>
   </div>
 }
 
