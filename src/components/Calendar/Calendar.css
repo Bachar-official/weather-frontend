@@ -1,0 +1,59 @@
+.calendar {
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Убираем space-between, теперь контролируем отступы вручную */
+  justify-content: flex-start;
+}
+
+.time {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  container-type: inline-size;
+  margin-top: 10px;
+  margin-bottom: 2vh;
+
+  > p {
+    font-size: clamp(1rem, 10cqi, 4rem);
+    text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+  }
+}
+
+.date {
+  height: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: auto; /* Большой отступ до .holidays (заполняет всё свободное пространство) */
+  container-type: size;
+
+  > p {
+    text-shadow: 0 2px 12px rgba(0,0,0,0.8);
+  }
+
+  .day {
+    font-size: 50cqh;
+  }
+
+  .month {
+    font-size: 30cqh;
+  }
+
+  .weekday {
+    font-size: 20cqh;
+    font-style: italic;
+  }
+}
+
+.holidays {
+  width: 100%;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.4);
+}

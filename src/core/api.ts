@@ -4,8 +4,8 @@ const location = window.location.href;
 const isProd = !location.includes('localhost');
 
 const BASE_API_URL = isProd ?
-  `${import.meta.env.VITE_BASE_API_URL}:${import.meta.env.VITE_BASE_API_PORT}`
-  : `localhost:${import.meta.env.VITE_BASE_API_PORT}`;
+  `http://${import.meta.env.VITE_BASE_API_URL}:${import.meta.env.VITE_BASE_API_PORT}`
+  : `http://localhost:${import.meta.env.VITE_BASE_API_PORT}`;
 
 async function getWeather(): Promise<Weather | null> {
   const response = await fetch(`${BASE_API_URL}/weather`);
