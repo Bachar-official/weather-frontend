@@ -8,6 +8,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  box-sizing: border-box;
 }
 
 .time {
@@ -33,7 +34,7 @@
   justify-content: stretch;
   align-items: center;
   gap: 10px;
-  margin-bottom: auto; /* Большой отступ до .holidays (заполняет всё свободное пространство) */
+  margin-bottom: auto;
   container-type: size;
 
   > p {
@@ -42,6 +43,7 @@
 
   .day {
     font-size: 50cqh;
+    font-weight: bold;
   }
 
   .month {

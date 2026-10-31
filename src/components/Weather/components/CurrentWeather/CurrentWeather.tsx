@@ -30,7 +30,7 @@ function CurrentWeather({ activeIndex, weather, geomagnetic }: CurrentWeatherPro
 
         <div className='card'>
           <img src={getUnitIcon(Units.Wind)} />
-          <p>{`${getWindDirection(weather.windDegree)} ${(weather.windSpeed) / 3.6} м/с`}</p>
+          <p>{`${getWindDirection(weather.windDegree)} ${((weather.windSpeed) / 3.6).toFixed(1)} м/с`}</p>
         </div>
 
         <div className='card'>

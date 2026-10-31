@@ -1,8 +1,11 @@
-export function dateToTime(isoDate: string | undefined): string {
+export function dateToTime(isoDate: string | undefined, onlyHours?: boolean): string {
   if (!isoDate || isoDate === '') {
     return '';
   }
   const date = new Date(isoDate);
+  if (onlyHours) {
+    return getFullTimeUnits(date.getHours());
+  }
   return `${getFullTimeUnits(date.getHours())}:${getFullTimeUnits(date.getMinutes())}`;
 }
 

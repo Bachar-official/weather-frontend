@@ -1,9 +1,21 @@
 .forecastRoot {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   box-sizing: border-box;
+  padding: 10px;
 }
 
 .error {
   font-size: 10vh;
+}
+
+.chart {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  > svg {
+    width: 100%;
+    height: 100%;
+  }
 }
